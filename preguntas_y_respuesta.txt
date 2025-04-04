@@ -1,0 +1,209 @@
+1. Enumere y especifique las diferentes colleciones en Java 
+
+R/ 1- List: Interfaz que define una colección ordenada.
+   2- ArrayList: Implementación basada en un arreglo dinámico, es eficiente para acceder y modificar elementos por índice.
+   3- LinkedList: Implementación basada en una lista doblemente enlazada, eficiente para insertar y eliminar elementos en cualquier parte de la lista.
+
+2. ¿Cuáles son los tres principios básicos de la programación orientada a objetos? 
+
+R/ 1- Encapsulamiento
+   2- Herencia
+   3- Polimorfismo
+
+3. Clasifique los códigos http según su tipología 
+
+R/ 1- Códigos de Respuesta Satisfactoria (2xx)
+     Descripción: Indican que la solicitud fue recibida, entendida y procesada correctamente.
+
+     200 OK: La solicitud se ha procesado correctamente.
+
+     201 Created: La solicitud ha sido exitosa y ha resultado en la creación de un nuevo recurso.
+
+     204 No Content: La solicitud ha sido exitosa, pero no hay contenido para devolver.
+
+     202 Accepted: La solicitud ha sido aceptada para procesamiento, pero el procesamiento no se ha completado.
+
+
+   2- Códigos de Error del Cliente (4xx)
+
+    400 Bad Request: La solicitud es malformada o contiene datos inválidos.
+
+    401 Unauthorized: El cliente no está autorizado para acceder al recurso solicitado (requiere autenticación).
+
+    403 Forbidden: El servidor ha entendido la solicitud, pero se niega a autorizarla.
+
+    404 Not Found: El recurso solicitado no fue encontrado en el servidor.
+
+    405 Method Not Allowed: El método HTTP utilizado no está permitido para el recurso solicitado.
+
+   3- Códigos de Error del Servidor (5xx)
+
+    500 Internal Server Error: El servidor encontró un error inesperado que le impidió procesar la solicitud.
+
+    502 Bad Gateway: El servidor, al actuar como puerta de enlace o proxy, recibió una respuesta inválida del servidor ascendente.
+
+    503 Service Unavailable: El servidor no está disponible temporalmente, generalmente por mantenimiento o sobrecarga.
+
+    504 Gateway Timeout: El servidor, al actuar como puerta de enlace o proxy, no recibió una respuesta a tiempo de un servidor ascendente.
+
+
+4. ¿Para qué se utiliza la anotación @AutoWired en Spring Boot? 
+
+R/ Se utiliza para inyectar dependencias de manera automática.
+
+
+5. ¿Cuáles son los diferentes niveles de encapsulamiento en Java? 
+
+R/ private, public, protected, default
+
+
+Preguntas de Conocimientos en PHP: 
+
+1. ¿Qué son las superglobales en PHP y cómo se utilizan? 
+
+ R/ Las superglobales son globales por naturaleza, lo que significa que se pueden acceder desde cualquier parte del código, tanto dentro de funciones como fuera de ellas. No es necesario declararlas como global para usarlas dentro de una función.
+
+ 1- $_GET: Uso: Se usa para recuperar información de los formularios enviados con el método GET o para obtener valores directamente desde la URL.
+
+ 2- $_POST: Uso: Se usa para obtener datos de formularios enviados con el método POST.
+
+ 3- $_SESSION: Uso: Se usa para almacenar información del usuario mientras dure su sesión.
+
+ 4- $_FILES: Uso: Se utiliza para manejar archivos que se suben al servidor
+
+ 5- $_SERVER: Uso: Se utiliza para obtener información sobre el entorno de ejecución del servidor, como la dirección IP del cliente, el nombre del host, la   URL de la página actual.
+
+ 5- $_REQUEST: Uso: Se utiliza cuando no te importa de qué tipo de solicitud provienen los datos (GET, POST, COOKIE).
+
+2. ¿Qué diferencia existe entre require y include en PHP? 
+
+require: Si el archivo especificado no se encuentra o no puede ser incluido, se genera un error fatal (Fatal error) y el script se detiene inmediatamente. Esto significa que el código después de la llamada a require no se ejecutará si el archivo no se incluye correctamente.
+
+include: Si el archivo no se encuentra o no puede ser incluido, se genera una advertencia (Warning), pero el script continúa ejecutándose. Esto permite que el script siga su ejecución incluso si el archivo no se encuentra.
+
+Aunque require y include tienen un comportamiento diferente en cuanto a la gestión de errores (fatal en el caso de require y warning en el caso de include), en ambos casos, es importante manejar los posibles fallos para asegurar una experiencia de usuario controlada y profesional.
+
+
+3. ¿Qué es PDO y por qué es preferible usarlo en lugar de las funciones mysqli_*? 
+(Describe cómo mejora la seguridad al interactuar con bases de datos).  
+
+PDO es preferido en muchos casos frente a mysqli_*:
+
+Soporte para múltiples bases de datos: PDO soporta una variedad de bases de datos, no solo MySQL. Esto significa que si en el futuro deseas cambiar tu sistema de gestión de bases de datos (por ejemplo, cambiar de MySQL a PostgreSQL o SQLite), puedes hacerlo con pocos cambios en tu código.
+
+En cambio, mysqli solo funciona con MySQL. Si decides cambiar a otra base de datos, necesitarás reescribir una gran parte de tu código.
+
+Soporte para consultas preparadas:
+
+Tanto PDO como mysqli ofrecen soporte para consultas preparadas, lo que mejora la seguridad. Sin embargo, PDO proporciona un enfoque más consistente y fácil de usar para trabajar con consultas preparadas.
+
+PDO tiene una sintaxis más sencilla y permite el uso de marcadores de posición (placeholders) tanto con nombres como con signos de interrogación (?), lo que hace que el código sea más limpio y fácil de leer.
+
+Modo de errores:
+
+PDO permite configurar el manejo de errores de manera más flexible utilizando excepciones. Esto hace que sea más fácil detectar y manejar errores de forma centralizada.
+
+En mysqli, debes usar mysqli_report() o comprobar manualmente los errores, lo que puede ser más tedioso.
+
+Conexión única y persistente:
+
+PDO permite el uso de conexiones persistentes, lo que puede mejorar el rendimiento de las aplicaciones al mantener las conexiones abiertas entre las solicitudes.
+
+mysqli también soporta conexiones persistentes, pero PDO proporciona una forma más clara de gestionarlas.
+
+Mejor manejo de transacciones:
+
+PDO ofrece un manejo de transacciones más simple y flexible. Puedes usar métodos como beginTransaction(), commit(), y rollBack() para gestionar transacciones de manera eficiente.
+
+Aunque mysqli también soporta transacciones, la API de PDO es más fácil de usar y manejar, especialmente si trabajas con varias bases de datos.
+
+Seguridad con PDO frente a mysqli_*
+Una de las principales ventajas de PDO es cómo ayuda a mejorar la seguridad al interactuar con bases de datos, especialmente al prevenir ataques de inyección SQL.
+
+Prevención de inyección SQL con consultas preparadas
+La inyección SQL es uno de los ataques más comunes en aplicaciones web. Este tipo de ataque ocurre cuando un atacante puede manipular una consulta SQL a través de parámetros enviados en una solicitud, como parámetros de formulario o URL.
+
+PDO utiliza consultas preparadas, lo que significa que los parámetros se pasan a la base de datos de manera separada de la consulta SQL. Esto asegura que los parámetros se traten como datos y no como parte del código SQL. De esta forma, se evita la manipulación de la consulta y se previene la inyección SQL.
+
+
+4. ¿Cómo funciona el manejo de excepciones en PHP? 
+
+R/ 1 - try:
+El bloque try es donde se coloca el código que puede generar una excepción. En otras palabras, dentro de un bloque try pones el código que puede fallar y lanzar una excepción.
+
+ 2 - throw:
+La palabra clave throw se utiliza para lanzar (generar) una excepción. Cuando se detecta un error, se usa throw para lanzar una excepción y transferir el control al bloque catch.
+
+ 3- catch:
+El bloque catch es donde se captura la excepción lanzada con throw. Aquí es donde manejas el error, como mostrar un mensaje adecuado o realizar acciones correctivas.
+
+4- finally:
+El bloque finally es opcional y se ejecuta siempre después de que se ejecute el bloque try, independientemente de si se lanzó o no una excepción. Este bloque se utiliza comúnmente para realizar tareas de limpieza, como cerrar archivos o liberar recursos, sin importar si ocurrió un error.
+
+5. ¿Qué es el Composer en PHP y para qué se utiliza? 
+(Describe cómo gestionar dependencias con este administrador). 
+
+R/
+Composer es un gestor de dependencias que te permite declarar las bibliotecas de las que depende tu proyecto PHP y se encarga de descargarlas y autoloading (cargar automáticamente) en tu proyecto.
+
+Además de manejar dependencias, Composer también puede:
+
+Autocargar clases de manera eficiente utilizando el estándar PSR-4.
+
+Instalar y actualizar paquetes de una manera sencilla.
+
+Gestionar versiones de librerías para asegurar que tu proyecto siempre tenga las versiones correctas.
+
+Permite definir y compartir proyectos o librerías para que otros desarrolladores puedan usarlas.
+
+¿Cómo se utiliza Composer para gestionar dependencias?
+Composer gestiona dependencias utilizando un archivo llamado composer.json, que define las bibliotecas (dependencias) y sus versiones necesarias para tu proyecto. Composer también tiene un archivo de bloqueo llamado composer.lock, que asegura que se instalen las mismas versiones de las dependencias en cualquier entorno de desarrollo o producción.
+
+6. ¿Cuál es la diferencia entre == y === en PHP? 
+
+R/
+== (Comparación de igualdad)
+El operador == se usa para comparar solo los valores de dos expresiones. Si las dos expresiones tienen el mismo valor después de realizar una conversión implícita de tipo, el operador devolverá true. Esto significa que PHP convierte los tipos de los operandos a un tipo común antes de realizar la comparación.
+
+=== (Comparación de identidad o estricta)
+El operador === compara tanto el valor como el tipo de los operandos. Esto significa que no solo se verifica si los valores son iguales, sino también si los tipos de datos son exactamente los mismos. Si ambos valores no son del mismo tipo, la comparación resultará en false, incluso si los valores numéricos son idénticos.
+
+7. ¿Cómo implementas control de acceso en PHP para proteger rutas o archivos? 
+(Incluye conceptos como autenticación y sesiones). 
+
+R/
+1- Configuración de Sesiones (para mantener el estado entre las peticiones)
+Las sesiones en PHP permiten almacenar datos en el servidor entre diferentes solicitudes HTTP. Para manejar sesiones, necesitas iniciar la sesión al principio de cada página protegida o de acceso restringido.
+
+2- Autenticación: Verificación del nombre de usuario y la contraseña
+Para la autenticación, puedes verificar las credenciales del usuario con una base de datos.
+
+3- Protección de Rutas: Verificación del acceso en las páginas protegidas
+Para restringir el acceso a ciertas rutas o archivos, puedes verificar si el usuario está autenticado y tiene el rol adecuado antes de permitir el acceso. Esto se realiza mediante la validación de la sesión.
+
+4. Cerrar sesión
+Es importante permitir que el usuario cierre sesión de manera segura. Esto se puede hacer destruyendo la sesión.
+
+R/ En el contexto de frameworks PHP como Laravel o Slim, un middleware es una capa intermedia que se ejecuta durante el ciclo de vida de una solicitud HTTP, entre la llegada de la solicitud y la respuesta del servidor. Los middleware permiten interceptar, modificar o incluso bloquear las solicitudes antes de que lleguen a la lógica principal del controlador, o pueden modificar la respuesta antes de que se envíe al cliente.
+
+8. ¿Qué es un middleware en el contexto de frameworks PHP como Laravel o Slim? 
+(Describe su propósito y cómo se implementa). 
+
+Propósito de un Middleware:
+1- Intercepción de solicitudes: Los middleware permiten interceptar una solicitud entrante antes de que llegue al controlador que maneja la ruta, lo que es útil para tareas de preprocesamiento (validación, autenticación, etc.).
+
+2- Autorización y autenticación: Uno de los usos más comunes de los middleware es la autenticación y autorización. Por ejemplo, antes de que se ejecute el controlador, un middleware puede verificar si el usuario está autenticado o si tiene el permiso adecuado para acceder a una ruta.
+
+3- Modificación de solicitudes y respuestas: Los middleware también pueden modificar la solicitud o la respuesta. Por ejemplo, un middleware puede agregar encabezados HTTP, procesar datos antes de que lleguen al controlador, o formatear los datos antes de enviarlos al cliente.
+
+4- Registros (logging): Los middleware pueden registrar detalles de cada solicitud, como el tiempo de ejecución o la IP del cliente, sin tener que añadir código repetido en cada controlador.
+
+5- Filtrado de contenido: Puedes crear middleware que compruebe el contenido de las solicitudes entrantes para asegurarse de que cumplen ciertos requisitos (como formato o tamaño de los datos), o que realice modificaciones en los datos antes de pasarlos al controlador.
+
+9. ¿Qué es y cómo funciona el patrón MVC en el desarrollo de aplicaciones con PHP? 
+(Explica la interacción entre el Modelo, Vista y Controlador). 
+
+El patrón MVC (Modelo-Vista-Controlador) es un patrón arquitectónico utilizado en el desarrollo de aplicaciones para separar la lógica de negocio, la presentación y el manejo de la interacción del usuario en tres componentes distintos. Este patrón promueve la organización y mantenimiento del código, permitiendo que cada componente se encargue de una responsabilidad específica. En PHP, es común usar este patrón en frameworks como Laravel, Symfony, y Slim.
+
+
+
